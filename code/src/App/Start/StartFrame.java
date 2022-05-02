@@ -18,7 +18,8 @@ import App.Logic.User;
 
 public class StartFrame extends JFrame{
 
-	private String icondir = "assets/nezuko.png";
+	private String icondir = "assets/circlenezuko.png";
+	private String loginicondir = "assets/nezuko.png";
 	private boolean hasAccess = true;
 	private User user;
 	private JButton accessButton;
@@ -39,12 +40,16 @@ public class StartFrame extends JFrame{
 		ImageIcon scaledIcon = new ImageIcon(original.getImage().getScaledInstance(width, height, Image.SCALE_SMOOTH));
 		JLabel iconLabel = new JLabel(scaledIcon);
 		setIconImage(original.getImage());
+		// Image for pfp
+		ImageIcon originalLogin = new ImageIcon(loginicondir);
+		ImageIcon loginScaledIcon = new ImageIcon(originalLogin.getImage().getScaledInstance(width, height, Image.SCALE_SMOOTH));
+		JLabel loginIconLabel = new JLabel(loginScaledIcon);
 		// Components
 		    // North
 			JPanel northPanel = new JPanel();
 			northPanel.setLayout(new BorderLayout());
 			northPanel.setBackground(Color.WHITE);
-			northPanel.add(iconLabel, BorderLayout.NORTH);
+			northPanel.add(loginIconLabel, BorderLayout.NORTH);
 			northPanel.add(new JLabel("Beesy",SwingConstants.CENTER), BorderLayout.SOUTH);
 			add(northPanel, BorderLayout.NORTH);
 			// Centre

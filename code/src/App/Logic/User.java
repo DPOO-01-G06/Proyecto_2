@@ -117,11 +117,11 @@ public class User {
     }
 
     public int getActivityCount() {
-        return this.activities.size();
+        return this.activities.size()-1;
     }
 
     public int getProjectCount() {
-        return this.projects.size();
+        return this.projects.size()-1;
     }
 
     public static User signIn(String username, String password) {
@@ -132,6 +132,32 @@ public class User {
                 String[] parts = line.split(":");
                 if (parts[0].equals(username) && parts[1].equals(password)) {
                     User user = new User(username, password);
+                    String[] activitiesText = parts[2].split(",");
+                    for (String activity : activitiesText) {
+                        user.activities.add(Integer.parseInt(activity));
+                    }
+                    String[] projectsText = parts[3].split(",");
+                    for (String project : projectsText) {
+                        user.projects.add(Integer.parseInt(project));
+                    }
+                    return user;
+                }
+            }
+            sc.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public static User findUser(String username) {
+        try {
+            Scanner sc = new Scanner(new File(accountsdir));
+            while (sc.hasNextLine()) {
+                String line = sc.nextLine();
+                String[] parts = line.split(":");
+                if (parts[0].equals(username)) {
+                    User user = new User(username, parts[1]);
                     String[] activitiesText = parts[2].split(",");
                     for (String activity : activitiesText) {
                         user.activities.add(Integer.parseInt(activity));

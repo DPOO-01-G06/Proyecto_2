@@ -1,35 +1,67 @@
 package App.Menu;
 
-public class SummaryPanel extends JFrame {
-    private JButton nuevoCreador;
-	private JButton cambiarCreador;
-	private JButton nuevoTipo;
-	private JButton descripcion;
-	private StartFrame window;
 
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.*;
+import javax.swing.border.TitledBorder;
+
+import App.Start.StartFrame;
+
+public class SummaryPanel extends JPanel implements ActionListener{
+	private JLabel nombre;
+	private JLabel autor;
+	private JLabel tipo;
+	private JLabel descripcion;
+	private JLabel nombre1;
+	private JLabel autor1;
+	private JLabel tipo1;
+	private JLabel descripcion1;
+	
     public SummaryPanel() {
-		setTitle("Record Activities");
-		setSize(150, 150);
-		setLocationRelativeTo(null);
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		// Components
-		setLayout(new GridLayout(4,1));
-		window= pinterfaz;
-		nuevoCreador= new JButton("NUEVO ");
-		nuevoCreador.setActionCommand("NUEVO");
-		nuevoCreador.addActionListener(this);
-		add(nuevoCreador);
-		nuevoTipo= new JButton("TIPO ");
-		nuevoTipo.setActionCommand("TIPO");
-		nuevoTipo.addActionListener(this);
-		add(nuevoTipo);
-		descripcion= new JButton("DESCRIPCION ");
-		descripcion.setActionCommand("DESCRIPCION");
-		descripcion.addActionListener(this);
-		add(descripcion);
-		// Show
-		setVisible(true);
+		setSize(200, 400);
+		
+		TitledBorder title = BorderFactory.createTitledBorder("Resumen Proyecto");
+		setBorder(title);
+		
+		setLayout(new BorderLayout());
+		
+		JPanel panelinfo= new JPanel();
+		panelinfo.setLayout(new GridLayout(4,2));
+		nombre = new JLabel("Nombre: ");
+		panelinfo.add(nombre);
+		nombre1 = new JLabel("Proyecto desarrollo urbano ");
+		panelinfo.add(nombre1);
+		
+		autor = new JLabel("Autor: ");
+		panelinfo.add(autor);
+		autor1 = new JLabel("Pepito Perez ");
+		panelinfo.add(autor1);
+		
+		tipo = new JLabel("Tipo: ");
+		panelinfo.add(tipo);
+		tipo1 = new JLabel("Construccion ");
+		panelinfo.add(tipo1);
+		
+		descripcion = new JLabel("Descripcion ");
+		panelinfo.add(descripcion);
+		descripcion1 = new JLabel("Proyecto desarrollo urbano para bogota ");
+		panelinfo.add(descripcion1);
+		
+		add(panelinfo, BorderLayout.CENTER );
+		
+		
+		
+		
     }
+
+	@Override
+	public void actionPerformed(ActionEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
 
     
 }

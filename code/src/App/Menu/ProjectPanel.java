@@ -1,31 +1,27 @@
 package App.Menu;
-import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.Image;
+
 import java.awt.*;  
 import java.awt.event.*;  
 
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
+import javax.swing.*;
+import javax.swing.border.Border;
+import javax.swing.border.TitledBorder;
 
-import App.Logic.Activity;
-import OldLogic.Participant;
+import App.Start.StartFrame;
 
 public class ProjectPanel extends JPanel implements ActionListener{
 	private JButton actividad;
 	private JButton proyecto;
 	private StartFrame mainWindow;
 
- 
- 
-	public ProjectPanel() {
+	public ProjectPanel(StartFrame mainWindow) {
+		
+		this.mainWindow=mainWindow;
+		TitledBorder title = BorderFactory.createTitledBorder("Panel Proyecto");
+		setBorder(title);
 		setSize(200, 200);
 		// Components
-		setLayout(new GridLayout(4,1));
+		setLayout(new GridLayout(2,1));
 		actividad = new JButton("Add Activity");
 		actividad.setActionCommand("Add Activity");
 		actividad.addActionListener(this);
@@ -38,7 +34,15 @@ public class ProjectPanel extends JPanel implements ActionListener{
 
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
-		// TODO Auto-generated method stub
+		String evento =arg0.getActionCommand();
+		if (evento.equals("Add Activity"))
+		{
+			new Botones2(mainWindow);
+		}
+		else
+		{
+			new Botones1(mainWindow);
+		}
 		
 	}
 }
