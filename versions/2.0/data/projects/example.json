@@ -1,0 +1,14 @@
+{
+    "project" : {
+        "title" : "Project Title",
+        "description" : "Project Description",
+        "startDate" : "01/01/2016",
+        "endDate" : "01/01/2017",
+        "creator" : "John Doe",
+        "participants" : [
+            "John Doe",
+            "Jane Doe"
+        ],
+        "tasks" : [1,2,3,4,5]
+    }
+}

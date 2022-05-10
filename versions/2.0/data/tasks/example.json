@@ -1,0 +1,13 @@
+{
+    "task" : {
+        "id" : "task_id",
+        "title" : "task_title",
+        "description" : "task_description",
+        "type" : "task_type",
+        "endDate" : "task_endDate",
+        "startHour" : "task_startHour",
+        "endHour" : "task_endHour",
+        "user" : "task_user",
+        "project" : "task_project_id"
+    }
+}

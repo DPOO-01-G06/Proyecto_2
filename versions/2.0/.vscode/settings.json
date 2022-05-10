@@ -1,0 +1,12 @@
+{
+    "java.project.referencedLibraries": {
+        "include": [
+            "lib/**/*.jar",
+            "c:\\Users\\Ronald\\Downloads\\swingx-1.6.jar\\swingx-1.6.jar",
+            "code/lib/json-simple-1.1.1.jar"
+        ],
+        "exclude": [
+            "c:\\P1-Entrega3\\lib\\org-jdesktop-swingx-1.6-201002261215.jar"
+        ]
+    }
+}
