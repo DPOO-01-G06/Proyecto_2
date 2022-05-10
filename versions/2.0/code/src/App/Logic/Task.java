@@ -31,14 +31,14 @@ public class Task {
 	}
 
 	public void saveData(){
-		File tasksFolder = new File("data/tasks");
+		File tasksFolder = new File("versions/2.0/data/tasks");
 		if (!tasksFolder.exists()) {
 			tasksFolder.mkdirs();
 		}
 		int numTasks = tasksFolder.listFiles().length - 1; // -1 because of the example.json file
 		this.id = numTasks;
 		
-		File taskFile = new File("data/tasks/" + this.id + ".json");
+		File taskFile = new File("versions/2.0/data/tasks/" + this.id + ".json");
 		try {
 			PrintWriter writer = new PrintWriter(taskFile);
 			JSONObject task = new JSONObject();

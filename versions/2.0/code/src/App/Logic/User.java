@@ -14,7 +14,7 @@ public class User {
     private static boolean wantToSave = true;
     private String username;
     private String password;
-    private static String accountsdir = "data/accounts.txt";
+    private static String accountsdir = "versions/2.0/data/accounts.txt";
 
     private ArrayList<Integer> tasks; // List of tasks ID's
     private ArrayList<Integer> projects; // List of projects ID's

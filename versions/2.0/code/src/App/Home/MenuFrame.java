@@ -24,8 +24,8 @@ import App.Start.StartFrame;
 
 public class MenuFrame extends JFrame{
 
-    private String icondir = "assets/circlenezuko.png";
-	private String loginicondir = "assets/nezukokillsyou.png";
+    private String icondir = "versions/2.0/assets/circlenezuko.png";
+	private String loginicondir = "versions/2.0/assets/nezukokillsyou.png";
 	private User user;
 	private JButton newTaskButton;
 	private JButton newProjectButton;

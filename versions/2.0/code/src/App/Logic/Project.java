@@ -37,14 +37,14 @@ public class Project {
 	}
 
 	public void saveData() {
-		File projectsFolder = new File("data/projects");
+		File projectsFolder = new File("versions/2.0/data/projects");
 		if (!projectsFolder.exists()) {
 			projectsFolder.mkdirs();
 		}
 		int numProjects = projectsFolder.listFiles().length - 1; // -1 because of the example.json file
 		this.id = numProjects;
 
-		File projectFile = new File("data/projects/" + this.id + ".json");
+		File projectFile = new File("versions/2.0/data/projects/" + this.id + ".json");
 		try {
 			PrintWriter writer = new PrintWriter(projectFile);
 			JSONObject project = new JSONObject();
@@ -72,7 +72,7 @@ public class Project {
 	}
 
 	public static void loadAllProjects() {
-		File projectsFolder = new File("data/projects");
+		File projectsFolder = new File("versions/2.0/data/projects");
 		if (!projectsFolder.exists()) {
 			projectsFolder.mkdirs();
 		}

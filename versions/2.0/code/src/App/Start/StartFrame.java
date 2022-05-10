@@ -18,8 +18,8 @@ import App.Logic.User;
 
 public class StartFrame extends JFrame{
 
-	private String icondir = "assets/circlenezuko.png";
-	private String loginicondir = "assets/nezuko.png";
+	private String icondir = "versions/2.0/assets/circlenezuko.png";
+	private String loginicondir = "versions/2.0/assets/nezuko.png";
 	private boolean hasAccess = true;
 	private User user;
 	private JButton accessButton;
